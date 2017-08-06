@@ -1,0 +1,64 @@
+:source-highlighter: highlightjs
+
+= ReadMe
+
+== このソフトウェアについて
+
+パンくずリスト生成スクリプトから厳選パターンだけを生成した。
+
+* 水平前次の左右配置パターン
+* 垂直前次の上下配置パターン
+
+=== 問題
+
+パターン別にCSSを作り使い分けねばならない。
+
+* 垂直前次の場合、記号とa要素テキストノードとの間のmarginがおかしい
+
+水平前次の左右配置パターンと垂直前次の上下配置パターンとでCSSによるmarginを区別せねばならない。思いの外面倒なことになる。HTMLだけでなくCSSまで生成せねばならない。
+
+== 開発環境
+
+* LinuxMint 17.3 MATE 32bit
+** [pyenv Python 3.6.1](http://ytyaru.hatenablog.com/entry/2017/12/17/000000)
+** http://ytyaru.hatenablog.com/entry/2017/05/30/000000[rbenv]
+*** Ruby 2.4.0
+**** http://ytyaru.hatenablog.com/entry/2017/06/20/000000[AsciiDoctor]
+** Firefox
+*** http://ytyaru.hatenablog.com/entry/2017/06/19/000000[AsciiDoc ビューア]
+** pluma
+*** http://ytyaru.hatenablog.com/entry/2017/06/18/000000[AsciiDoc ハイライト]
+
+== 参考
+
+* http://asciidoctor.org/docs/user-manual/#by-line-ranges
+
+== 実行
+
+[source, sh]
+----
+python3 NextPrevNavi.py
+----
+
+== 結果
+
+* HTML文字列が標準出力される。
+
+それを元に手書きで `index.html` ファイルを作った。ブラウザで表示確認できる。
+
+== ライセンス
+
+このソフトウェアはCC0ライセンスである。
+
+image:http://i.creativecommons.org/p/zero/1.0/88x31.png[link=http://creativecommons.org/publicdomain/zero/1.0/deed.ja]
+
+利用したソフトウェアとそのライセンスは以下。感謝。
+
+[options="header, autowidth"]
+|=======================
+|Library|License|Copyright
+|http://asciidoctor.org/[AsciiDoctor]|https://github.com/asciidoctor/asciidoctor/blob/master/LICENSE.adoc[MIT]|Copyright (C) 2012-2016 Dan Allen, Ryan Waldron and the Asciidoctor Project
+|https://highlightjs.org/[highlight.js]|https://github.com/isagalaev/highlight.js/blob/master/LICENSE[BSD 3-clause]|Copyright (c) 2006, Ivan Sagalaev
+|http://fontawesome.io/icon/home/[FontAwesome]|http://fontawesome.io/license/[MIT]|https://github.com/FortAwesome/Font-Awesome
+|=======================
+
